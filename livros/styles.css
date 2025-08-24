@@ -1,0 +1,215 @@
+
+    :root {
+      --primary-color: #4b9fa0;
+      --primary-hover: #3a7f80;
+      --secondary-color: #f8f9fa;
+      --text-color: #333;
+      --accent-color: #ff6b6b;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      padding-bottom: 2rem;
+    }
+    
+    .header {
+      background: white;
+      padding: 2rem 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    
+    .logo {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .search-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .search-box {
+      display: flex;
+      margin-bottom: 1.5rem;
+    }
+    
+    .search-input {
+      border: 2px solid var(--primary-color);
+      border-right: none;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+    
+    .search-input:focus {
+      background-color: rgb(235, 243, 243);
+      border-color: var(--primary-hover);
+      box-shadow: none;
+    }
+    
+    .search-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      padding: 0 1.5rem;
+      transition: all 0.3s;
+    }
+    
+    .search-btn:hover {
+      background-color: var(--primary-hover);
+    }
+    
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .filter-select {
+      flex: 1;
+      min-width: 150px;
+      padding: 0.5rem;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+    }
+    
+    .results-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .book-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+    
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .book-cover {
+      height: 250px;
+      object-fit: cover;
+      width: 100%;
+      background: linear-gradient(45deg, #4b9fa0, #3a7f80);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 4rem;
+    }
+    
+    .book-info {
+      padding: 1.5rem;
+    }
+    
+    .book-title {
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+    
+    .book-author {
+      color: #6c757d;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+    
+    .book-description {
+      color: #444;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .book-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+    
+    .no-books {
+      text-align: center;
+      padding: 3rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .no-books i {
+      font-size: 4rem;
+      color: #dee2e6;
+      margin-bottom: 1rem;
+    }
+    
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+    }
+    
+    .spinner {
+      width: 3rem;
+      height: 3rem;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @media (max-width: 768px) {
+      .search-box {
+        flex-direction: column;
+      }
+      
+      .search-input {
+        border-right: 2px solid var(--primary-color);
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+      }
+      
+      .search-btn {
+        border-radius: 8px;
+      }
+      
+      .book-cover {
+        height: 200px;
+      }
+    }
